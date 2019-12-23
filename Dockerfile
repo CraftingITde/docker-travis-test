@@ -1,2 +1,2 @@
-FROM python:3.7.4
+FROM python:3.8.1
 CMD ["python", "-c", "print('Hello World')"]
