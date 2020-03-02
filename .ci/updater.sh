@@ -4,6 +4,8 @@ LATEST_VERSION=$(curl -s 'https://api.github.com/repos/healthchecks/healthchecks
 CURRENT_VERSION=$(sed -nr 's/ARG TEST_VERSION=*(.+)/\1/p' Dockerfile);
 REPO_ADRESS=${git config --get remote.origin.url | sed 's~http[s]*://~~g'}
 
+git config --get remote.origin.url 
+
 echo "Found versions:"
 echo "  Latest:  ${LATEST_VERSION}"
 echo "  Current: ${CURRENT_VERSION}"
