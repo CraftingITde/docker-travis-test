@@ -1,4 +1,4 @@
 FROM python:3.7.4
-ARG TEST_VERSION=v1.12.0
+ARG TEST_VERSION=v1.13.0
 
 CMD ["python", "-c", "print('Hello World')"]
