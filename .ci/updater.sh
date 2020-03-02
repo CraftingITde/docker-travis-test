@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LATEST_VERSION=$(curl -s 'https://api.github.com/repos/healthchecks/healthchecks/releases/latest' | jq -r '.tag_name');
+LATEST_VERSION=$(curl -s 'https://api.github.com/repos/CraftingITde/tester/releases/latest' | jq -r '.tag_name');
 CURRENT_VERSION=$(sed -nr 's/ARG TEST_VERSION=*(.+)/\1/p' Dockerfile);
 REPO_ADRESS=$(git config --get remote.origin.url | sed 's~http[s]*://~~g')
 
