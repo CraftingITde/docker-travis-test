@@ -1,7 +1,7 @@
 #!/bin/bash
 
 LATEST_VERSION=$(curl -s 'https://api.github.com/repos/healthchecks/healthchecks/releases/latest' | jq -r '.tag_name');
-CURRENT_VERSION=$(sed -nr 's/ARG HEALTHCHECKS_VERSION=*(.+)/\1/p' Dockerfile);
+CURRENT_VERSION=$(sed -nr 's/ARG TEST_VERSION=*(.+)/\1/p' Dockerfile);
 REPO_ADRESS=${git config --get remote.origin.url | sed 's/https\?:\/\///'}
 
 echo "Found versions:"
@@ -9,7 +9,7 @@ echo "  Latest:  ${LATEST_VERSION}"
 echo "  Current: ${CURRENT_VERSION}"
 echo "  Repo:    ${REPO_ADRESS}"
 
-sed --in-place "s/HEALTHCHECKS_VERSION=${CURRENT_VERSION}/HEALTHCHECKS_VERSION=${LATEST_VERSION}/g" Dockerfile
+sed --in-place "s/TEST_VERSION=${CURRENT_VERSION}/TEST_VERSION=${LATEST_VERSION}/g" Dockerfile
 
 git diff --exit-code . > /dev/null
 

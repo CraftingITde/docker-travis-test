@@ -4,8 +4,7 @@ pipeline {
 	agent {
 			label 'RELEASE'
 			}
-    triggers { cron('0 0 * * *'), 
-               cron('12 0 * * *') }
+    triggers { cron('H */12 * * * ') }
 
 	stages{
         stage("Deploy") {  
