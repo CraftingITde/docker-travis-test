@@ -23,7 +23,7 @@ else
     git config user.email "$username@craftingit.de"
     git add Dockerfile
 	git commit --message "Bump to latest version ${VERSION}"
-    git push https://$username:$password@$REPO_ADRESS:master
+    git push https://$username:$password@$REPO_ADRESS master
 fi
 
 git show "${LATEST_VERSION}" &> /dev/null
